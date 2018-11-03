@@ -7,51 +7,51 @@
 ## Usage                                
 　　`agd command`
 
-- regist       
+- 注册账户      
 　　`agd regist -u usernaeme -p password -e e-mail -t telephone`     
 
-- login    
+- 登陆  
 　　`agd login -u username -p password`
 
-- logout    
+- 登出   
 　　`agd logout`
 
-- list all users    
+- 显示所有用户    
 　　`agd lsu`
 
-- delete current account         
+- 删除当前用户        
 　　`agd del -p password`
 
-- create a meeting                      
+- 创建会议                      
 　　`agd cm -t title -p participator1 -p participator2 -s start -e end`
 
-- change the participants of a meeting                      
+- 添删会议成员                     
 　　add: `agd ap -t title -p name`                                   
 　　delete: `agd dp -t title -p name`
 
-- list meetings during a period                    
+- 显示一个时间段内的所有会议                  
 　　`agd lsm -s start -e end`
 
-- cancel a meeting                      
+- 取消某个会议                 
 　　`agd cancel -t title`
 
-- quit a meeing                   
+- 退出某个会议                
 　　`agd quit -t title`
 
-- clear all meetings                  
+- 清楚所有会议                 
 　　`agd clear`
 
 ## log & data
 - logs                  
-　　where logs are stored
+　　存储所有账户信息
 
 - dates                           
-　　it stores datas of users, current user and meetings
+　　存储所有会议相关信息
 
 
 ## examples
 
-- regist
+
 ```
 ./agd regist -u user1 -p 123 -e email1@mail.com -t 11111
 Success
@@ -64,10 +64,7 @@ Success
 
 ./agd regist -u user1 -p 111 -e mail2@mail.com -t 11111
 this username is aleardy exist
-```
 
-- login
-```
 ./agd login -u usr1 -p 123
 username not exist
 
@@ -76,24 +73,15 @@ incorrect password
 
 ./agd login -u user1 -p 123
 Success
-```
 
-- logout
-```
 ./agd logout
 Success
-```
 
-- list all users
-```
 ./agd lsu
 user1, email1@mail.com, 1111
 user2, email2@mail.com, 2222
 user3, email3@mail.com, 3333
-```
 
-- delete current account
-```
 ./agd lsu
 user1, email1@mail.com, 1111
 user2, email2@mail.com, 2222
@@ -111,10 +99,7 @@ Success
 ./agd lsu
 user2, email2@mail.com, 2222
 user3, email3@mail.com, 3333
-```
 
-- create a meeting
-```
 ./agd cm -t title -p user1, user2 -s 2018-11-01T10:00 -e 2018-11-01T10:30
 no user login
 
@@ -129,10 +114,7 @@ title
 　- sponsor: user3
 　- time: 2018-11-01 10:00 - 2018-11-01 10:30
 　- participators: user1
-```
 
-- list meetings during a period
-```
 ./agd lsm -s 2018-11-01T0:00 -e 2018-11-01T20:00
 title
 　- sponsor: user3
@@ -148,10 +130,7 @@ title3
 　- sponsor: user3
 　- time: 2018-11-01 11:00 - 2018-11-01 11:30
 　- participators: user2
-```
 
-- change the participants of a meeting
-```
 ./agd ap -t title2 -p user
 participator user is not exist
 
@@ -174,10 +153,7 @@ title2
 　- sponsor: user3
 　- time: 2018-11-01 11:00 - 2018-11-01 11:30
 　- participators: user1, user2
-```
 
-- cancel a meeting
-```
 ./agd cancel -t title
 Success
 
@@ -186,10 +162,7 @@ title2
 　- sponsor: user3
 　- time: 2018-11-01 11:00 - 2018-11-01 11:30
 　- participators: user1, user2
-```
 
-- quit a meeting
-```
 ./agd lsm -s 2018-11-01T0:00 -e 2018-11-01T23:00
 title3
 　- sponsor: user3
@@ -224,10 +197,6 @@ title2
 　- time: 2018-11-01 13:00 - 2018-11-01 15:30
 　- participators: user1
 
-```
-
-- clear all meetings
-```
 ./agd lsm -s 2018-11-01T0:00 -e 2018-11-01T23:00
 title2
 　- sponsor: user3
